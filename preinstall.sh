@@ -27,9 +27,9 @@ cfdisk ${DISK}
 fdisk -l
 echo "please enter boot partition"
 read BPART
-echo "\n please enter swap partition"
+echo "please enter swap partition"
 read SPART
-echo "\n please enter root partition"
+echo "please enter root partition"
 read RPART
 
 echo "Formatting partitions"
@@ -55,13 +55,11 @@ arch-chroot /mnt
 echo "Setting up language, locale and clock"
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 hwclock --systohc
-nano /etc/locale.gen
+printf '%s' 'en_US.UTF-8 UTF-8' >> /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo vneeha > /etc/hostname
-echo "127.0.0.1 localhost
-::1   localhost
-127.0.0.1   vneeha.localdomain vneeha" >> /etc/hosts
+printf '%s \n %s \n %s' '127.0.0.1 localhost' '::1   localhost' '127.0.0.1  vneeha.localdomain vneeha' >> /etc/hosts
 
 echo "--------------------------------------"
 echo "--      Set Password for Root       --"
