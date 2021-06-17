@@ -59,7 +59,6 @@ PKGS=(
     'nautilus-share'        # File Sharing in Nautilus
     'ntfs-3g'               # Open source implementation of NTFS file system
     'parted'                # Disk utility
-    'samba'                 # Samba File Sharing
     'smartmontools'         # Disk Monitoring
     'smbclient'             # SMB Connection 
     'xfsprogs'              # XFS Support
@@ -91,8 +90,6 @@ PKGS=(
     'yarn'                  # Dependency management (Hyper needs this)
 
     # MEDIA ---------------------------------------------------------------
-
-    'kdenlive'              # Movie Render
     'obs-studio'            # Record your screen
     'celluloid'             # Video player
     
